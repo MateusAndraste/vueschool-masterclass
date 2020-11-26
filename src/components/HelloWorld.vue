@@ -1,16 +1,19 @@
 <template>
-<div>
+<div class="col-full">
   <h1>Welcome to the Forum</h1>
+  <ThreadList :threads="threads" />
 </div>
 </template>
 
 <script>
 import sourceData from '@/data'
+import ThreadList from './ThreadList.vue'
 export default {
+  components: { ThreadList },
   name: 'HelloWorld',
   data () {
     return {
-      threads: sourceData.threads,
+      threads: Object.values(sourceData.threads),
       posts: sourceData.posts,
       users: sourceData.users
     }
