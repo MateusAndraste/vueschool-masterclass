@@ -1,7 +1,8 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
-import HelloWorld from '@/components/HelloWorld'
-import ThreadShow from "@/components/ThreadShow";
+import Home from '@/pages/PageHome'
+import ThreadShow from "@/pages/PageThreadShow";
+import NotFound from '@/pages/PageNotFound'
 
 Vue.use(VueRouter)
 
@@ -9,13 +10,18 @@ const routes = [
   {
     path: '/',
     name: 'Home',
-    component: HelloWorld
+    component: Home
   },
   {
     path: '/thread/:id',
     name: 'ThreadShow',
     component: ThreadShow,
     props: true
+  },
+  {
+    path: '*',
+    name: 'NotFound',
+    component: NotFound
   }
 ]
 

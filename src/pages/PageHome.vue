@@ -7,10 +7,9 @@
 
 <script>
 import sourceData from '@/data'
-import ThreadList from './ThreadList.vue'
+import ThreadList from '@/components/ThreadList.vue'
 export default {
   components: { ThreadList },
-  name: 'HelloWorld',
   data () {
     return {
       threads: Object.values(sourceData.threads),
