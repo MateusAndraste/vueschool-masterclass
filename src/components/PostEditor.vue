@@ -28,19 +28,13 @@ export default {
   }),
   methods: {
     save () {
-      const postId = 'greatPost' + Math.random();
-      // Date.now() traz a data em milisegundos, precisamos em segundos
-      // por isso dividimos por 1000 e o Math.floor usamos para arredondar
-      // o valor
       const post = {
         text: this.text,
-        publishedAt: Math.floor(Date.now() / 1000),
-        threadId: this.threadId,
-        userId: 'jUjmgCurRRdzayqbRMO7aTG9X1G2',
-        '.key': postId,
+        threadId: this.threadId
       };
       this.text = '';
       this.$emit('save', { post });
+      this.$store.dispatch('createPost', post)
     },
   },
 };
