@@ -2,6 +2,7 @@ import Vue from 'vue'
 import VueRouter from 'vue-router'
 import Home from '@/pages/PageHome'
 import ThreadShow from '@/pages/PageThreadShow'
+import ThreadCreate from '@/pages/PageThreadCreate'
 import Category from '@/pages/PageCategory'
 import Profile from '@/pages/PageProfile'
 import Forum from '@/pages/PageForum'
@@ -27,6 +28,12 @@ const routes = [
     name: 'Forum',
     component: Forum,
     props: true
+  },
+  {
+    path: '/thread/create',
+    name: 'ThreadCreate',
+    component: ThreadCreate,
+    props: true,
   },
   {
     path: '/thread/:id',
